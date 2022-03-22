@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BigPicture">
+
+
+    <ImageView
+        android:id="@+id/picture"
+        android:layout_width="384dp"
+        android:layout_height="354dp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="16dp"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <Button
+        android:id="@+id/toMainBtn"
+        android:layout_width="378dp"
+        android:layout_height="43dp"
+        android:layout_below="@+id/buttonsL"
+        android:layout_marginTop="10dp"
+        android:text="Главная"
+        tools:layout_editor_absoluteX="20dp"
+        tools:layout_editor_absoluteY="393dp" />
+
+    <LinearLayout
+        android:id="@+id/buttonsL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/picture"
+        android:layout_centerInParent="true"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/backBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Назад"
+            tools:layout_editor_absoluteX="20dp"
+            tools:layout_editor_absoluteY="363dp" />
+
+        <Button
+            android:id="@+id/nextBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Вперёд"
+            tools:layout_editor_absoluteX="20dp"
+            tools:layout_editor_absoluteY="363dp" />
+    </LinearLayout>
+</RelativeLayout>
