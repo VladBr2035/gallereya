@@ -21,27 +21,28 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     private ArrayList<Cell> galleryList;
     private Context context;
 
-    // Provide a suitable constructor (depends on the kind of dataset)
+    // Предоставляет подходящий конструктор (зависит от типа набора данных)
     public MyAdapter(Context context, ArrayList<Cell> galleryList) {
         this.context = context;
         this.galleryList = galleryList;
     }
 
-    // Create new views (invoked by the layout manager)
+    // Создание новых представлений (вызывается менеджером компоновки)
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent,
                                          int viewType) {
-        // create a new view
+        // создание a new view
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.cell, parent, false);
         return new ViewHolder(view);
     }
-    // Replace the contents of a view (invoked by the layout manager)
+
+    //Заменить содержимое представления (вызывается менеджером компоновки)
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, @SuppressLint("RecyclerView") final int position) {
-        // - get element from your dataset at this position
-        // - replace the contents of the view with that element
+        // - получить элемент из вашего набора данных в этой позиции
+        // - заменить содержимое представления этим элементом
         viewHolder.img.setScaleType(ImageView.ScaleType.CENTER_CROP);
         setImageFromPath(galleryList.get(position).getPath(), viewHolder.img);
         viewHolder.img.setOnClickListener(new View.OnClickListener() {
@@ -50,7 +51,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
                 //TODO что-то может происходить, если кликнуть на изображение
                 Toast.makeText(context, "" + galleryList.get(position).getTitle(), Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(context, BigPicture.class);
-//                intent.putExtra("picturePath", galleryList.get(position).getPath());   //Отправляем путь к картинке во второе активити
                 ArrayList<String> paths = new ArrayList<>();
                 for (int i = 0; i < galleryList.size(); i++){
                     paths.add(galleryList.get(i).getPath());
@@ -63,11 +63,11 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         });
     }
 
-    // Provide a reference to the views for each data item
-    // Complex data items may need more than one view per item, and
-    // you provide access to all the views for a data item in a view holder
+    // Указывает ссылку на представления для каждого элемента данных
+    //Сложные элементы данных могут нуждаться в более чем одном представлении для каждого элемента, и
+    //вы предоставляете доступ ко всем представлениям для элемента данных в держателе представления
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        // each data item is just a string in this case
+        // каждый элемент данных в этом случае является просто строкой
         public ImageView img;
 
         public ViewHolder(View view) {
@@ -77,7 +77,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     }
 
 
-    // Return the size of your dataset (invoked by the layout manager)
+    // Вернуть размер вашего набора данных (вызывается менеджером компоновки)
     @Override
     public int getItemCount() {
         return galleryList.size();

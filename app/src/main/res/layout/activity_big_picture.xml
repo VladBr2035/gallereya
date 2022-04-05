@@ -4,22 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/bck"
     tools:context=".BigPicture">
 
 
     <ImageView
         android:id="@+id/picture"
         android:layout_width="384dp"
-        android:layout_height="354dp"
+        android:layout_height="600dp"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="16dp"
+        android:layout_centerHorizontal="true"
         tools:srcCompat="@tools:sample/avatars" />
 
     <Button
         android:id="@+id/toMainBtn"
+        style="@style/TextAppearance.Material3.LabelLarge"
         android:layout_width="378dp"
         android:layout_height="43dp"
         android:layout_below="@+id/buttonsL"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:text="Главная"
         tools:layout_editor_absoluteX="20dp"
@@ -35,19 +39,21 @@
 
         <Button
             android:id="@+id/backBtn"
+            style="@style/TextAppearance.Material3.LabelLarge"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="Назад"
+            android:text="Предыдущая"
             tools:layout_editor_absoluteX="20dp"
             tools:layout_editor_absoluteY="363dp" />
 
         <Button
             android:id="@+id/nextBtn"
+            style="@style/TextAppearance.Material3.LabelLarge"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="Вперёд"
+            android:text="Следующая"
             tools:layout_editor_absoluteX="20dp"
             tools:layout_editor_absoluteY="363dp" />
     </LinearLayout>
